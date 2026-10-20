@@ -25,6 +25,7 @@
         <a href="#research">Research</a>
         <a href="#software">Software</a>
         <a href="#publications">Publications</a>
+        <a href="#presentations">Presentations</a>
         <a href="#about">About</a>
       </nav>
       <button class="theme-toggle" type="button" aria-pressed="false" hidden>
@@ -46,6 +47,7 @@
         <div class="hero-links">
           <a class="button" href="#research">Explore my research <span aria-hidden="true">↗</span></a>
           <a class="text-link" href="https://github.com/diego-dom95">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#visual-guide">Watch the animations <span aria-hidden="true">↓</span></a>
         </div>
         <p class="affiliation">Department of Physics<br><strong>Institute of Science Tokyo</strong></p>
         <div class="research-index" aria-label="Research focus">
@@ -101,6 +103,43 @@
       </figure>
     </section>
 
+    <section class="section animation-section" id="visual-guide" aria-labelledby="animation-title">
+      <p class="section-label">Research in motion</p>
+      <h2 id="animation-title">From a rotating star to a moving detector</h2>
+      <p class="section-description">A continuous wave begins with a nearly repeating source. By the time we measure it on Earth, the detector’s motion has changed the apparent frequency. These two short chapters introduce the geometry behind the search.</p>
+      <div class="animation-grid">
+        <figure class="animation-card">
+          <video controls playsinline preload="none" width="1920" height="1080" poster="assets/source-still.png" aria-label="A rotating neutron star and its gravitational-wave signal" aria-describedby="source-caption">
+            <source src="assets/rotating-source.mp4" type="video/mp4">
+            Your browser cannot play this video. A text explanation follows.
+          </video>
+          <figcaption id="source-caption">
+            <strong>01 / The source <span>15 seconds · Silent, annotated</span></strong>
+            A rotating, non-axisymmetric neutron star can produce a persistent gravitational-wave signal.
+          </figcaption>
+          <details>
+            <summary>Text description and physical assumptions</summary>
+            <p>An illustrative three-dimensional star rotates beside a periodic waveform. For this triaxial-star model, the changing mass quadrupole repeats twice per rotation, so the gravitational-wave frequency is twice the rotation frequency. The deformation is exaggerated and the rotation slowed for visibility; the surface is an artistic depiction.</p>
+          </details>
+        </figure>
+        <figure class="animation-card">
+          <video controls playsinline preload="none" width="1920" height="1080" poster="assets/orbit-still.png" aria-label="Earth's orbital motion changes the detected gravitational-wave frequency" aria-describedby="orbit-caption">
+            <source src="assets/orbital-motion.mp4" type="video/mp4">
+            Your browser cannot play this video. A text explanation follows.
+          </video>
+          <figcaption id="orbit-caption">
+            <strong>02 / The detector <span>16 seconds · Silent, annotated</span></strong>
+            Earth’s changing velocity toward the source shifts the frequency measured by a ground-based detector.
+          </figcaption>
+          <details>
+            <summary>Text description and physical assumptions</summary>
+            <p>Earth moves around its orbit beside a frequency-versus-time graph. Arrows show its velocity and the component along the source direction; the graph follows the corresponding orbital Doppler modulation. This chapter isolates the orbital contribution. Daily rotation and relativistic timing corrections enter the full signal model.</p>
+            <p>The motion is calculated using LALSuite ephemerides for an illustrative source. Body sizes and velocity arrows use separate display scales. This is an explanatory animation, not an observed source or a detection result.</p>
+          </details>
+        </figure>
+      </div>
+    </section>
+
     <section class="section research-section" id="research" aria-labelledby="research-title">
       <div class="section-intro">
         <p class="section-label">Research</p>
@@ -151,24 +190,102 @@
           </details>
         </div>
       </article>
+      <article class="featured-study" aria-labelledby="featured-study-title">
+        <div class="study-intro">
+          <div>
+            <p class="section-label">Featured experiment · KAGRA poster work</p>
+            <h3 id="featured-study-title">Does adding physical information improve a transformer search?</h3>
+          </div>
+          <div>
+            <p>We tested whether a vision transformer could benefit from explicit coordinates, cross-detector information, and candidate signal tracks. In a targeted follow-up, we added a branch that follows the known signal trajectory and accounts for the detector response.</p>
+            <p>The detection curves nearly overlap. Across the two training repetitions, this addition did not establish a reproducible sensitivity gain. The experiment helps identify which physical information a future architecture needs to use more effectively.</p>
+          </div>
+        </div>
+        <figure class="result-figure">
+          <a href="assets/targeted-transformer-comparison.png" aria-label="Open the targeted transformer comparison at full resolution">
+            <img src="assets/targeted-transformer-comparison.png" width="4389" height="1747" loading="lazy" alt="Ten-day targeted detection curves for the baseline transformer and its physical extension almost overlap. A magnified panel shows the small paired differences and their uncertainty.">
+          </a>
+          <figcaption><strong>Reading the figure.</strong> The left panel shows the fraction of injected signals detected at a 1% false-alarm probability. Larger sensitivity depth means a weaker signal at fixed noise. The right panel magnifies the change relative to the baseline. “T-V4” labels the targeted physical extension; the dashed matched-filter reference comes from published work.</figcaption>
+        </figure>
+        <div class="study-footer">
+          <p>Ten days · Hanford + Livingston · 500 Hz · Known source parameters · Simulated Gaussian noise</p>
+          <a class="text-link" href="#presentations">See the poster <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="study-scope">This is a poster-era experiment, separate from the later systematic CNN/transformer comparison described in the manuscript in preparation.</p>
+      </article>
     </section>
 
     <section class="section software-section" id="software" aria-labelledby="software-title">
       <div>
         <p class="section-label">Research software</p>
         <h2 id="software-title">PyTorch tools for<br>continuous waves.</h2>
-        <p>Simulation, coherent-search calculations, and data-acquisition utilities for gravitational-wave research, with documented numerical checks and runnable examples.</p>
+        <p>Training a detector requires many examples of weak signals in noise. I develop PyTorch tools that generate fresh batches of complex Fourier data during training, avoiding the need to store a fixed collection of training images.</p>
+        <p>The toolkit also includes coherent-search calculations and data-acquisition utilities. Numerical comparisons with LALSuite check documented signal and data conventions.</p>
         <a class="text-link" href="https://github.com/diego-dom95/pytorch_cw">Explore the repository <span aria-hidden="true">↗</span></a>
       </div>
       <div class="software-notebook">
-        <div class="notebook-title"><span>A scientific workflow</span><span aria-hidden="true">↘</span></div>
-        <ol>
-          <li><strong>Model</strong><span>Source evolution and detector response</span></li>
-          <li><strong>Generate</strong><span>Batched complex Fourier observations</span></li>
-          <li><strong>Evaluate</strong><span>Detection statistics and calibrated sensitivity</span></li>
-          <li><strong>Validate</strong><span>Reference comparisons and reproducible checks</span></li>
-        </ol>
-        <p>PyTorch · LALSuite · GPU computing</p>
+        <div class="notebook-title"><span>Fresh examples, in memory</span><span aria-hidden="true">↘</span></div>
+        <figure class="pipeline-figure">
+          <svg viewBox="0 0 450 330" role="img" aria-labelledby="pipeline-title pipeline-description">
+            <title id="pipeline-title">From a source model to neural-network inputs</title>
+            <desc id="pipeline-description">Source parameters feed a simulation with detector response and noise. Hanford and Livingston produce separate real and imaginary Fourier channels, delivered as a fresh batch to training or evaluation.</desc>
+            <g fill="none" stroke="var(--line)">
+              <rect x="25" y="15" width="400" height="48" rx="3"/>
+              <path d="M225 63V86m-5-5 5 5 5-5"/>
+              <rect x="25" y="90" width="400" height="48" rx="3"/>
+              <path d="M225 138v22H120v17m105-17h105v17M120 249v20h210v-20m-105 20v22"/>
+              <rect x="25" y="179" width="190" height="70" rx="3"/>
+              <rect x="235" y="179" width="190" height="70" rx="3"/>
+              <rect x="25" y="293" width="400" height="31" rx="3"/>
+            </g>
+            <g fill="var(--ink)" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">
+              <text x="225" y="45">Source parameters</text>
+              <text x="225" y="120">Detector response + signal + noise</text>
+              <text x="120" y="203">Hanford</text>
+              <text x="330" y="203">Livingston</text>
+              <text x="225" y="314">Fresh tensor batch → train / evaluate</text>
+            </g>
+            <g fill="var(--accent)" text-anchor="middle" font-family="monospace" font-size="12">
+              <text x="120" y="230">Real / Imaginary</text>
+              <text x="330" y="230">Real / Imaginary</text>
+            </g>
+          </svg>
+          <figcaption>Conceptual data flow. Complex Fourier coefficients retain amplitude and phase information.</figcaption>
+        </figure>
+        <a class="text-link" href="https://github.com/diego-dom95/pytorch_cw/blob/main/examples/on_the_fly.py">Read the on-the-fly example <span aria-hidden="true">↗</span></a>
+        <p class="software-note">The scientific examples require the documented dependencies, including LALSuite and ephemerides where applicable. GPU execution is selected explicitly.</p>
+      </div>
+    </section>
+
+    <section class="section presentations-section" id="presentations" aria-labelledby="presentations-title">
+      <p class="section-label">Presentations</p>
+      <h2 id="presentations-title">Posters and talks</h2>
+      <article class="poster-feature">
+        <a class="poster-preview" href="assets/kagra-f2f-2026-preview.png" aria-label="Open a full-page image preview of the KAGRA F2F 2026 poster">
+          <img src="assets/kagra-f2f-2026-preview.png" width="1132" height="1600" loading="lazy" alt="KAGRA F2F 2026 poster, with transformer architecture comparisons, sensitivity curves, instrumental-line tests, and sky-dependence maps.">
+        </a>
+        <div>
+          <p class="publication-status">KAGRA F2F 2026 · Poster</p>
+          <h3>Physics-Informed Vision Transformers for Continuous Gravitational Waves Detection</h3>
+          <p class="authors">Diego Dominguez, Seiya Sasaoka, Kentaro Somiya, and Hirotaka Takahashi</p>
+          <p>This poster asks whether explicit physical information improves a vision-transformer detector. It compares detection sensitivity, responses to stationary instrumental lines, and variation across the sky.</p>
+          <p>The tested extensions largely preserved the baseline sensitivity. Their small changes motivate a closer examination of how neural networks use the signal’s physical structure.</p>
+          <a class="text-link" href="assets/kagra-f2f-2026-preview.png">View poster preview <span aria-hidden="true">↗</span></a>
+          <p class="poster-release-note">Image preview only. Citation correction: reference [3] in the poster should read <a href="https://doi.org/10.1103/xgz9-qdkg">Phys. Rev. D 112, 123052 (2025)</a>.</p>
+        </div>
+      </article>
+      <div class="presentation-list">
+        <article>
+          <p class="publication-status">June 2024 · Hannover · Oral presentation</p>
+          <h3>Detection of unmodeled continuous gravitational waves using a Transfer Learning approach</h3>
+          <p>Continuous Waves and Neutron Stars Workshop</p>
+        </article>
+        <article>
+          <p class="publication-status">July 2023 · Nagoya · Poster</p>
+          <h3>Convolutional Neural Networks for the detection of Continuous Gravitational Waves</h3>
+          <p>38th International Cosmic Ray Conference</p>
+          <a class="text-link" href="https://pos.sissa.it/444/1519/">Read the published proceedings <span aria-hidden="true">↗</span></a>
+        </article>
       </div>
     </section>
 

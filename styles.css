@@ -160,6 +160,36 @@ details p:last-child { margin-bottom: 0; }
 .site-footer { display: flex; justify-content: space-between; gap: 2rem; padding: 1.8rem 0; border-top: 1px solid var(--line); font-size: .72rem; }
 .site-footer p { margin: 0; }
 .site-footer span, .site-footer p:last-child { color: var(--muted); }
+.animation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+.animation-card { margin: 0; min-width: 0; }
+.animation-card video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0e1823; border: 1px solid var(--line); }
+.animation-card figcaption { margin: 1rem 0; }
+.animation-card figcaption strong { display: block; color: var(--ink); font-size: .9rem; font-weight: 500; margin-bottom: .5rem; }
+.animation-card figcaption span { margin-top: .2rem; color: var(--muted); font-size: .72rem; font-weight: 400; }
+.featured-study { margin-top: 3rem; padding-top: 2.2rem; border-top: 2px solid var(--accent); }
+.study-intro { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; }
+.study-intro h3 { font-family: var(--serif); font-size: 1.7rem; }
+.study-intro > div > p:not(.section-label) { font-size: .93rem; color: var(--muted); }
+.result-figure { margin: 1.5rem 0 1rem; }
+.result-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: white; }
+.result-figure figcaption { margin-top: .9rem; max-width: 58rem; }
+.result-figure figcaption strong { color: var(--ink); font-weight: 500; }
+.study-footer { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.5rem; }
+.study-footer p { font-family: var(--mono); font-size: .65rem; color: var(--accent); max-width: 47rem; margin: 0; }
+.study-scope { color: var(--muted); font-size: .77rem; margin: .8rem 0 0; max-width: 55rem; }
+.pipeline-figure { margin: 1rem 0 1.2rem; }
+.pipeline-figure svg { display: block; width: 100%; height: auto; }
+.pipeline-figure figcaption { margin-top: .6rem; }
+.software-notebook > .software-note { color: var(--muted); line-height: 1.6; }
+.poster-feature { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 3rem; align-items: center; padding: 1rem 0 2.5rem; }
+.poster-preview { display: block; padding: .6rem; border: 1px solid var(--line); background: var(--panel); }
+.poster-preview img { display: block; width: 100%; height: auto; }
+.poster-feature h3 { font-family: var(--serif); font-size: 1.65rem; }
+.poster-feature > div > p:not(.publication-status) { color: var(--muted); font-size: .92rem; }
+.poster-feature > div > .poster-release-note { font-size: .73rem; margin: .8rem 0 0; }
+.presentation-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
+.presentation-list h3 { font-size: 1.05rem; margin-bottom: .6rem; }
+.presentation-list article > p:not(.publication-status) { color: var(--muted); font-size: .85rem; }
 
 @media (max-width: 900px) {
   .site-header, main, .site-footer { width: calc(100% - 48px); }
@@ -174,6 +204,8 @@ details p:last-child { margin-bottom: 0; }
   .research-row { grid-template-columns: 2rem 1fr 1.25fr; gap: 1.3rem; }
   .software-section { gap: 2rem; }
   .software-notebook { padding: 1.3rem; }
+  .study-intro { gap: 1.8rem; }
+  .poster-feature { grid-template-columns: 190px minmax(0, 1fr); gap: 2rem; }
 }
 @media (max-width: 650px) {
   .site-header, main, .site-footer { width: calc(100% - 36px); }
@@ -196,6 +228,12 @@ details p:last-child { margin-bottom: 0; }
   .research-detail { grid-column: 2; }
   .research-question { max-width: none; }
   .site-footer { flex-direction: column; gap: .5rem; }
+  .animation-grid, .study-intro, .poster-feature, .presentation-list { grid-template-columns: 1fr; }
+  .animation-grid { gap: 2rem; }
+  .study-intro { gap: 1rem; }
+  .poster-feature { gap: 1.5rem; }
+  .poster-preview { width: min(240px, 100%); }
+  .featured-study { margin-top: 2rem; }
 }
 @media print {
   :root, :root[data-theme], :root:not([data-theme]) {
@@ -209,7 +247,7 @@ details p:last-child { margin-bottom: 0; }
     --plot-grid: #d6e0db;
     --plot-axis: #7a9597;
   }
-  .draft-strip, .header-controls, .hero-links, .skip-link { display: none; }
+  .draft-strip, .header-controls, .hero-links, .skip-link, video { display: none; }
   body { font-size: 10pt; background: white; }
   .site-header, main, .site-footer { width: 100%; }
   .hero { padding: 2rem 0; gap: 2rem; }

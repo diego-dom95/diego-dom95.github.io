@@ -24,6 +24,19 @@ Open `http://127.0.0.1:8000/` on the same computer.
 - `assets/`: website assets, including a photograph with personal metadata removed.
 - `.nojekyll`: serves this static site without Jekyll processing.
 
+## Research media
+
+Two short, silent animation chapters explain a rotating source and Earth's
+orbital Doppler modulation. They have native playback controls and text
+descriptions, and do not autoplay or loop.
+
+The featured sensitivity figure comes from the ten-day targeted transformer
+experiment presented alongside the KAGRA poster work. Its caption distinguishes
+that experiment from the later CNN/transformer manuscript.
+
+The KAGRA F2F 2026 poster is available as an image preview only. Its original
+PDF, private documents, research data, and checkpoints are not included here.
+
 GitHub Pages publishes the root of the `main` branch.
 The scientific diagram is illustrative and does not represent measured data.
 Unpublished work is labeled separately from published papers.
