@@ -386,8 +386,24 @@
     </section>
   </main>
   <footer class="site-footer">
-    <p>Diego S. Dominguez <span>· Tokyo, Japan</span></p>
-    <p>Gravitational waves · Statistical inference · Scientific computing</p>
+    <section class="visitor-section" aria-labelledby="visitor-title">
+      <div class="visitor-copy">
+        <h2 id="visitor-title">Visitors around the world</h2>
+        <p>A map of visits from readers who choose to load it. Locations are approximate.</p>
+        <p id="visitor-privacy">Loading the map sends your IP address and browser information to MapMyVisitors, which retains visitor data while this site's account is active. <a href="https://mapmyvisitors.com/b/policy" rel="noreferrer">Provider privacy policy</a>.</p>
+        <button class="visitor-toggle" type="button" aria-controls="visitor-map" aria-expanded="false" hidden>Load visitor map</button>
+        <p class="visitor-status" role="status"></p>
+        <noscript><p>The optional visitor map requires JavaScript. No map requests are made with JavaScript disabled.</p></noscript>
+      </div>
+      <div class="visitor-map" id="visitor-map" aria-describedby="visitor-privacy">
+        <p class="visitor-placeholder">Map disabled until you choose to load it.</p>
+      </div>
+    </section>
+    <div class="footer-meta">
+      <p>Diego S. Dominguez <span>· Tokyo, Japan</span></p>
+      <p>Gravitational waves · Statistical inference · Scientific computing</p>
+    </div>
   </footer>
+  <script src="visitor-map.js" defer></script>
 </body>
 </html>

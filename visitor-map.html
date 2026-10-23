@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Optional visitor map</title>
+  <style>
+    html, body { margin: 0; background: #2d78ad; color: white; font: 12px/1.5 Arial, sans-serif; }
+    #mapmyvisitors-widget { max-width: 100%; }
+    p { margin: .6rem; }
+  </style>
+</head>
+<body>
+  <script>
+    if (window.location.hostname === 'diego-dom95.github.io') {
+      const widget = document.createElement('script');
+      widget.id = 'mapmyvisitors';
+      widget.async = true;
+      widget.src = 'https://mapmyvisitors.com/map.js?d=6ye_G0yn9gsTbfhb8oiyC63kUldgSEoJ9OhqXA8B8vc&cl=ffffff&w=a';
+      widget.onerror = () => {
+        const message = document.createElement('p');
+        message.textContent = 'The visitor-map service could not be loaded.';
+        document.body.append(message);
+      };
+      document.body.append(widget);
+    }
+  </script>
+</body>
+</html>
